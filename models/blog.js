@@ -1,0 +1,34 @@
+const { DataTypes, BOOLEAN } = require("sequelize");
+const sequelize = require("../data/db");
+
+const Blog = sequelize.define("blog", {
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  alttitle: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  description: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  image: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  homepage: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+  },
+  approval: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+  }
+},
+{
+  timestamps:true
+});
+
+module.exports = Blog;
